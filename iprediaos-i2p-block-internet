@@ -11,7 +11,7 @@ echo "# Firewall configuration written by iprediaos-i2p-block-internet
 :FORWARD DROP [0:0]
 :OUTPUT DROP [0:0]
 -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
--A OUTPUT -m owner --uid-owner mon -j ACCEPT
+-A OUTPUT -m owner --uid-owner i2p -j ACCEPT
 COMMIT" > /etc/sysconfig/iptables
 
 echo "Reloading iptables"
