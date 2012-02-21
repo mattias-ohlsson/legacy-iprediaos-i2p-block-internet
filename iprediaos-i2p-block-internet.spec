@@ -21,8 +21,6 @@ IprediaOS I2P Block Internet change iptables to only allow Internet access for t
 
 
 %build
-#%configure
-#make %{?_smp_mflags}
 
 
 %install
