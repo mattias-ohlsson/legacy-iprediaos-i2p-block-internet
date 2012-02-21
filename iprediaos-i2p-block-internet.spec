@@ -6,7 +6,7 @@ Summary:	Only allow Internet access for i2p
 Group:		Applications/Internet
 License:	GPL
 URL:		http://www.ipredia.org
-Source0:	%{name}-%{version}.tar.gz
+Source0:	%{name}-%{version}.tar.bz2
 BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 
 #BuildRequires:	
