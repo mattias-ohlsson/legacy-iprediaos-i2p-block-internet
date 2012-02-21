@@ -1,0 +1,19 @@
+#!/bin/sh
+# IprediaOS I2P Block Internet
+
+echo "IprediaOS I2P Block Internet"
+echo "Rewriting firewall rules"
+
+echo "# Firewall configuration written by iprediaos-i2p-block-internet
+# Manual customization of this file is not recommended.
+*filter
+:INPUT DROP [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT DROP [0:0]
+-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+-A OUTPUT -m owner --uid-owner mon -j ACCEPT
+COMMIT" > /etc/sysconfig/iptables
+
+echo "Reloading iptables"
+service iptables restart
+echo "Done"
