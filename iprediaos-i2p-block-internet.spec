@@ -35,7 +35,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-,root,root,-)
 %doc
-
+%{_sbindir}/iprediaos-i2p-block-internet
 
 
 %changelog
