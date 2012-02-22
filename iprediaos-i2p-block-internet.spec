@@ -12,6 +12,7 @@ BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 #BuildRequires:	
 Requires:	i2p
 
+
 %description
 IprediaOS I2P Block Internet change iptables to only allow Internet access for the i2p user.
 
@@ -39,5 +40,8 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Wed Feb 22 2012 Mattias Ohlsson <mattias.ohlsson@inprose.com> - 0.1-1
+- First package
+
 * Tue Feb 21 2012 Mattias Ohlsson <mattias.ohlsson@inprose.com> - 0.1-1
 - Initial spec file
