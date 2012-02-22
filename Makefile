@@ -4,7 +4,7 @@ VERSION=$(shell awk '/Version/ { print $$2 }' iprediaos-i2p-block-internet.spec)
 all:
 
 install: 
-	@install -c -m 0755 iprediaos-i2p-block-internet ${DESTDIR}/sbin/
+	@install -c -m 0755 iprediaos-i2p-block-internet ${PREFIX}/sbin/
 
 archive:
 	@git archive --prefix=$(NAME)-$(VERSION)/ HEAD -o $(NAME)-$(VERSION).tar
