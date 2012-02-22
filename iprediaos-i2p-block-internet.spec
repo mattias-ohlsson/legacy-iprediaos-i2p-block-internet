@@ -29,6 +29,11 @@ rm -rf $RPM_BUILD_ROOT
 make install PREFIX=$RPM_BUILD_ROOT
 
 
+%post
+# Change firewall rules
+iprediaos-i2p-block-internet > /dev/null 2>&1
+
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
