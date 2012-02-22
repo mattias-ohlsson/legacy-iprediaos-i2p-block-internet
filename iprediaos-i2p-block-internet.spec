@@ -25,7 +25,7 @@ IprediaOS I2P Block Internet change iptables to only allow Internet access for t
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install DESTDIR=$RPM_BUILD_ROOT
+make install PREFIX=$RPM_BUILD_ROOT
 
 
 %clean
