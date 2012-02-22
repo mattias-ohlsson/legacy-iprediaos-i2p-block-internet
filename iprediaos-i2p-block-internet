@@ -1,5 +1,6 @@
 #!/bin/sh
 # IprediaOS I2P Block Internet
+# mattias.ohlsson@inprose.com
 
 echo "IprediaOS I2P Block Internet"
 echo "Rewriting firewall rules"
@@ -11,6 +12,10 @@ echo "# Firewall configuration written by iprediaos-i2p-block-internet
 :FORWARD DROP [0:0]
 :OUTPUT DROP [0:0]
 -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+-A INPUT -i lo -j ACCEPT
+-A OUTPUT -o lo -j ACCEPT
+-A OUTPUT -p tcp --dport 53 -j ACCEPT
+-A OUTPUT -p udp --dport 53 -j ACCEPT
 -A OUTPUT -m owner --uid-owner i2p -j ACCEPT
 COMMIT" > /etc/sysconfig/iptables
 
