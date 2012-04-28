@@ -1,6 +1,6 @@
 Name:		iprediaos-i2p-block-internet
 Version:	0.1
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Only allow Internet access for i2p
 
 Group:		Applications/Internet
@@ -29,9 +29,9 @@ rm -rf $RPM_BUILD_ROOT
 make install PREFIX=$RPM_BUILD_ROOT
 
 
-%post
+%posttrans
 # Change firewall rules
-iprediaos-i2p-block-internet > /dev/null 2>&1
+/sbin/iprediaos-i2p-block-internet > /dev/null 2>&1
 
 
 %clean
