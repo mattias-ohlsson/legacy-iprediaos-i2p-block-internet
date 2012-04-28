@@ -20,5 +20,5 @@ echo "# Firewall configuration written by iprediaos-i2p-block-internet
 COMMIT" > /etc/sysconfig/iptables
 
 echo "Reloading iptables"
-service iptables restart
+service iptables condrestart
 echo "Done"
