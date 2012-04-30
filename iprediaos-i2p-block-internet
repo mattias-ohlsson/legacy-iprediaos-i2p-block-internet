@@ -22,5 +22,5 @@ COMMIT
 EOF
 
 echo "Reloading iptables"
-/bin/systemctl condrestart iptables.service
+/bin/systemctl condrestart iptables.service >/dev/null 2>&1 || :
 echo "Done"
