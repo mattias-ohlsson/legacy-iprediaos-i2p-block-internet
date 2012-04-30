@@ -1,6 +1,6 @@
 Name:		iprediaos-i2p-block-internet
-Version:	0.1
-Release:	2%{?dist}
+Version:	0.2
+Release:	1%{?dist}
 Summary:	Only allow Internet access for i2p
 
 Group:		Applications/Internet
@@ -12,7 +12,7 @@ BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 BuildArch: 	noarch
 
 #BuildRequires:	
-Requires:	i2p iptables
+Requires:	i2p iptables system-config-firewall
 
 
 %description
@@ -47,6 +47,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Mon Apr 30 2012 Mattias Ohlsson <mattias.ohlsson@inprose.com> - 0.2-1
+- Update requires list
+
 * Wed Feb 22 2012 Mattias Ohlsson <mattias.ohlsson@inprose.com> - 0.1-1
 - First package
 
