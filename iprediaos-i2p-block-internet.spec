@@ -33,7 +33,7 @@ make install PREFIX=$RPM_BUILD_ROOT
 
 %posttrans
 # Change firewall rules
-/sbin/iprediaos-i2p-block-internet > /dev/null 2>&1
+/usr/sbin/iprediaos-i2p-block-internet > /dev/null 2>&1
 
 
 %clean
