@@ -44,6 +44,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 %doc
 %{_sbindir}/iprediaos-i2p-block-internet
+%{_datadir}/iprediaos-i2p-block-internet/iptables-rules
 
 
 %changelog
