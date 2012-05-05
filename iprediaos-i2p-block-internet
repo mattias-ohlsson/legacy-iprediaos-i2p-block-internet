@@ -5,21 +5,7 @@
 echo "IprediaOS I2P Block Internet"
 echo "Rewriting firewall rules"
 
-cat > /etc/sysconfig/iptables << EOF
-# Firewall configuration written by iprediaos-i2p-block-internet
-# Manual customization of this file is not recommended.
-*filter
-:INPUT DROP [0:0]
-:FORWARD DROP [0:0]
-:OUTPUT DROP [0:0]
--A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
--A INPUT -i lo -j ACCEPT
--A OUTPUT -o lo -j ACCEPT
--A OUTPUT -p tcp --dport 53 -j ACCEPT
--A OUTPUT -p udp --dport 53 -j ACCEPT
--A OUTPUT -m owner --uid-owner i2p -j ACCEPT
-COMMIT
-EOF
+cp /usr/share/iprediaos-i2p-block-internet/iptables-rules /etc/sysconfig/iptables
 
 echo "Reloading iptables"
 /bin/systemctl condrestart iptables.service >/dev/null 2>&1 || :
